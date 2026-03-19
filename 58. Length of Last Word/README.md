@@ -33,3 +33,7 @@ A **word** is a maximal **substring** consisting of non-space characters only.
 * 1 <= `s.length` <= 10<sup>4</sup>
 * `s` consists of only English letters and spaces `' '`.
 * There will be at least one word in `s`.
+
+<br>
+
+:bulb: **Note**: It is possible to provide a one-line solution that takes advantage of Python's built in methods, which I also provided.
