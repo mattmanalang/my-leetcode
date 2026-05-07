@@ -13,6 +13,10 @@ double findMedianSortedArrays(int* nums1, int nums1Size, int* nums2, int nums2Si
     }
 
     // *NOTE2
+    if (nums1Size == 0) {
+        if (nums2Size % 2 == 0) { return (double)(nums2[nums2Size/2 - 1] + nums2[nums2Size/2])/2; }
+        else { return (double)nums2[nums2Size/2]; }
+    }
 
     int m = nums1Size, n = nums2Size;
     int left = 0, right = m;
@@ -57,6 +61,6 @@ double findMedianSortedArrays(int* nums1, int nums1Size, int* nums2, int nums2Si
 
 /* Matthew's Notes:
 NOTE1: Compared to the Python solution, we have to swap the sizes of nums1 and nums2 as well. In C, arrays don't carry their length-- it's passed explicitly alongside them.
-NOTE2: Compared to the Python solution, we can exclude the logic for checking if nums1 is NULL/empty-- nums1Size is passed explicitly. The algorithm will handle it naturally.
+NOTE2: We can exclude the logic for checking if nums1 is NULL/empty-- nums1Size is passed explicitly. If 0, the algorithm will still handle it naturally.
 NOTE3: I defined my own sentinel values just outside of the stated bounds. Using INFINITY from <math.h> would also work here.
   */
