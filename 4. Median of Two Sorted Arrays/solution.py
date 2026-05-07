@@ -3,7 +3,8 @@ class Solution:
         # Make nums1 to contain the smaller array
         if len(nums2) < len(nums1):
             nums1, nums2 = nums2, nums1
-        
+
+        # NOTE1
         # Case: nums1 is empty, return median of nums2
         if not nums1:
             if len(nums2) % 2 == 0:  # Even length
@@ -35,3 +36,8 @@ class Solution:
                     right = i - 1
                 elif leftMax2 > rightMin1:  # Too many elements taken from num2 left, increase i
                     left = i + 1
+
+# Matthew's Notes
+# NOTE1: After writing the C version of this solution, I realized this block of code isn't necessary for this particular solution, just offering an early return.
+#        Why? LeetCode will not pass in a NULL/None argument for one of the arrays, only empty.
+#        len() will return 0 and the rest of the algorithm will handle it naturally.
